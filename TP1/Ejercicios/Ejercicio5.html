@@ -3,8 +3,15 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Template</title>
+	</head>
+<body>
+	<header>
+		<canvas id="canvas" width="900" height="600"></canvas>
+		<img src="https://www.fairfaxstatic.com.au/content/dam/images/g/t/4/k/z/e/image.related.articleLeadwide.620x349.gtk1mw.png/1483142013617.jpg">
+	<header>
+
 		<script>
-			   <!-- JavaScript code -->
+				 <!-- JavaScript code -->
 				var ctx = document.getElementById("canvas").getContext("2d");
 				var image1 = new Image();
 				image1.crossOrigin="Anonymous";
@@ -18,10 +25,7 @@
 						var maxHeight = imageData.height;
 						for(var x=0; x<maxWidth; x++){
 							for(var y=0; y<maxHeight; y++){
-
-
-									valor = getRed(imageData,x,y);
-
+									valor = (getRed(imageData,x,y)+getGreen(imageData,x,y)+getBlue(imageData,x,y))/3;
 								setRed(imageData,x,y,valor);
 								setGreen(imageData,x,y,valor);
 								setBlue(imageData,x,y,valor);
@@ -29,7 +33,7 @@
 						}
 						ctx.putImageData(imageData,0,0);
 			}
-		
+
 
 
 		function getRed(imageData,x,y){
@@ -57,14 +61,5 @@
 			imageData.data[index+2]=valor;
 		}
 		</script>
-
-	</head>
-<body>
-	<header>
-		<a href="" onclick="JavaScript:canal('R')">RED</a>
-		<a href="" onclick="JavaScript:canal('G')">GREEN</a>
-		<a href="" onclick="JavaScript:canal('B')">BLUE</a>
-	<header>
-	<canvas id="canvas" width="900" height="600" style="border:#000 solid 1px;" />
 	</body>
 </html>

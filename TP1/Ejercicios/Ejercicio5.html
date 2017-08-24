@@ -7,15 +7,16 @@
 <body>
 	<header>
 		<canvas id="canvas" width="900" height="600"></canvas>
-		<img src="https://www.fairfaxstatic.com.au/content/dam/images/g/t/4/k/z/e/image.related.articleLeadwide.620x349.gtk1mw.png/1483142013617.jpg">
 	<header>
 
 		<script>
 				 <!-- JavaScript code -->
 				var ctx = document.getElementById("canvas").getContext("2d");
 				var image1 = new Image();
-				image1.crossOrigin="Anonymous";
-				image1.src="https://www.fairfaxstatic.com.au/content/dam/images/g/t/4/k/z/e/image.related.articleLeadwide.620x349.gtk1mw.png/1483142013617.jpg";
+
+//				image1.crossOrigin="Anonymous";
+//				image1.src="https://www.fairfaxstatic.com.au/content/dam/images/g/t/4/k/z/e/image.related.articleLeadwide.620x349.gtk1mw.png/1483142013617.jpg";
+				image1.src="imagen.jpg";
 				image1.onload = function(){
 						canvas.width = image1.width;
 						canvas.height = image1.height;

@@ -13,11 +13,11 @@ h1,h2,h3,h4{
 
 h1{font-size:85px;}
 h2{font-size:36px;}
-
 h4{font-size:36px;}
 
 
-.mybody{margin-top: 100px;}
+.mybody{margin-top: 30px;}
+.fix-altura{ height: 450px}
 /* nav */
 .navbar-brand{
     color:#FFFFFF !important;
@@ -26,8 +26,6 @@ h4{font-size:36px;}
     font-family:'Handlee',Arial,Helvetica,sans-serif;
     font-size: 32px;
     font-weight: bold;
-
-
 }
 .navbar-brand .r{ color:#BF090C}
 .navbar-brand .g{ color:#0C980A}
@@ -103,6 +101,7 @@ a.filterbutton:hover {
 .contenedor-imagen{
     width: 400px;
     height: 400px;
+    text-align: center;
 }
 #magicHere{
 
@@ -120,6 +119,7 @@ a.filterbutton:hover {
     padding: 185px 150px 185px 150px;
     padding: 185px 150px 185px 150px;
     margin: 0px;
+    overflow: hidden;
 }
 
 #fileUp-input{
@@ -145,4 +145,32 @@ a.filterbutton:hover {
     vertical-align: middle;
     -webkit-transition: all linear .3s;
     font-weight: normal;
+}
+
+
+.btn-mio{
+    width: 140px;
+    margin: 0px ;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,.2);
+    color: #FFFFFF;
+    border-radius: 0px 0px 10px 10px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-transition: all linear .3s;
+    font-weight: normal;
+    font-family:Arial,Helvetica,sans-serif !important;
+    display: none;
+
+
+
+
+
+
+}
+
+.btn-mio:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #FFFFFF;
 }

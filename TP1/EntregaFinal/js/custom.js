@@ -1,10 +1,7 @@
-
-
-
 	var canvas = null;
 	var context = null;
 	var imageData = null;
-    var imageDataOriginal = null;
+	var imageDataOriginal = null;
 
 
 	$(function() {
@@ -26,19 +23,17 @@
         canvas = $('#magicHere')[0];
         context = canvas.getContext('2d');
         $img.load(function() {
+					canvas.width = this.width;
+					canvas.height = this.height;
             context.drawImage(this, 0, 0);
             imageData = context.getImageData(0,0,this.width,this.height);
             imageDataOriginal = context.getImageData(0,0,this.width,this.height);
+						//context.width = this.width;
+						//context.height = this.height;
             context.putImageData(imageData,0,0);
         });
 	    }
 	});
-
-
-
-
-
-
 
 
 	function getRed(imageData,x,y){
@@ -65,11 +60,10 @@
 		var index = (x + y * imageData.width) * 4;
 		imageData.data[index+2]=valor;
 	}
+  function getDownloadData() {
+      return canvas.toDataURL('image/jpg');
+  }
 
-    function getDownloadData() {
-        return canvas.toDataURL('image/jpg');
-
-    }
-    $("#saveImage").click(function() {
-        $(this).attr("href", getDownloadData());
-    });
+  $("#saveImage").click(function() {
+      $(this).attr("href", getDownloadData());
+  });

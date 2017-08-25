@@ -1,3 +1,20 @@
+var kernelX = [
+    [-1,0,1],
+    [-2,0,2],
+    [-1,0,1]
+];
+
+var kernelY = [
+    [-1,-2,-1],
+    [0,0,0],
+    [1,2,1]
+];
+
+var kernelB = [
+    [1/9,1/9,1/9],
+    [1/9,1/9,1/9],
+    [1/9,1/9,1/9]
+];
 
 function negative(){
     for(var x=0; x<imageData.width; x++){
@@ -72,6 +89,7 @@ function binarization() {
     context.putImageData(imageData,0,0);
 }
 
+// dependiendo del tamaño de la imagen elegida este filtro puede tardar algo de tiempo
 function brighness(){
     var quantity = $("#bg1").val();
     for(var x=0; x<imageData.width; x++){
@@ -139,31 +157,16 @@ function sobel(mat){
     }
     context.putImageData(imageData,0,0);
 }
-
+// matrices de sobel
 function sobelH(){
-    var kernelX = [
-        [-1,0,1],
-        [-2,0,2],
-        [-1,0,1]
-    ];
     sobel(kernelX);
 }
 
 function sobelV(){
-    var kernelY = [
-        [-1,-2,-1],
-        [0,0,0],
-        [1,2,1]
-    ];
     sobel(kernelY);
 }
 
 function sobelB(){
     // todo por 1/9
-    var kernelB = [
-        [1/9,1/9,1/9],
-        [1/9,1/9,1/9],
-        [1/9,1/9,1/9]
-    ];
     sobel(kernelB);
 }

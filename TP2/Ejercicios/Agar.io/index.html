@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Template</title>
+	</head>
+		<canvas id="canvas" width="900" height="600" style="border:#000 solid 1px;" />
+
+  <a href="" onclick="changeBackground()"></a>
+	<script src="Circle.js"></script>
+
+	</body>
+<script>
+
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext("2d");
+
+var circles = [];
+
+
+var yo = new Circle(100,100, 100,'rgba(45,127,3,0.5)');
+
+yo.draw(ctx);
+
+
+canvas.onmousedown = function(e){
+	yo.select(yo.x - e.clientX,yo.y - e.clientY);
+}
+
+canvas.onmouseup = function(e){
+			yo.unSelect();
+}
+
+canvas.onmousemove = function(e){
+		if(yo.s == 1){
+				nuevo_centro_x = e.clientX + yo.sx;
+				nuevo_centro_y = e.clientY + yo.sy;
+				yo.setX( nuevo_centro_x );
+				yo.setY( nuevo_centro_y );
+				for(let i = 0; i < circles.length; i++){
+					if(yo.contiene(circles[i]) && (circles[i].comido == 0)){
+						yo.comer(circles[i]);
+					}
+				}
+		}
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		yo.draw(ctx);
+		for(let i = 0; i < circles.length; i++){
+			circles[i].draw(ctx);
+		}
+}
+
+setInterval(newSemilla, 1000);
+
+function newSemilla(){
+	var c = new Circle(getRandomArbitrary(900),getRandomArbitrary(600), 10,randomizeColor());
+	circles.push(c);
+}
+
+function getRandomArbitrary(max) {
+  return Math.random() * (max - 0) + 0;
+}
+
+function randomizeColor() { //function name
+      var color = '#'; // hexadecimal starting symbol
+      var letters = ['000000','FF0000','00FF00','0000FF','FFFF00','00FFFF','FF00FF','C0C0C0']; //Set your colors here
+      color += letters[Math.floor(Math.random() * letters.length)];
+      return color;
+}
+
+</script>
+
+</html>

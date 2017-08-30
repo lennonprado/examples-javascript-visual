@@ -3,6 +3,21 @@ function Circle(x, y, r, c){
   this.y = y;
   this.r = r;
   this.c = c;
+  this.s = 0;
+  this.sx = 0;
+  this.sy = 0;
+}
+
+Circle.prototype.select = function(x,y) {
+  this.s = 1;
+  this.sx=x;
+  this.sy=y;
+}
+
+Circle.prototype.unSelect = function() {
+  this.s = 0;
+  this.sx = 0;
+  this.sy = 0;
 }
 
 Circle.prototype.setX = function(x) {
@@ -20,6 +35,7 @@ Circle.prototype.draw = function(ctx) {
   ctx.fill();
   ctx.closePath();
 }
+
 
 Circle.prototype.drawLine = function(ctx,lineWidth) {
   ctx.beginPath();

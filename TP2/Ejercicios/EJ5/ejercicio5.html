@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Template</title>
+	</head>
+		<canvas id="canvas" width="900" height="600" style="border:#000 solid 1px;" />
+
+  <a href="" onclick="changeBackground()"></a>
+	<script src="Circle.js"></script>
+
+	</body>
+<script>
+
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext("2d");
+
+var circles = [];
+var c1 = new Circle(100,100, 100,'rgba(45,127,3,0.5)');
+var c2 = new Circle(400,110, 100,'rgba(255,0,200,0.5)');
+var c3 = new Circle(110,400, 100,'rgba(100,127,3,0.5)');
+var c4 = new Circle(400,400, 100,'rgba(0,7,100,0.5)');
+
+circles.push(c1);
+circles.push(c2);
+circles.push(c3);
+circles.push(c4);
+
+for(let i = 0; i < circles.length; i++){
+	circles[i].draw(ctx);
+}
+
+
+canvas.onmousedown = function(e){
+	for(let i = 0; i < circles.length; i++){
+		if(circles[i].clickIn(e.clientX,e.clientY) == true){
+				circles[i].select(circles[i].x - e.clientX,circles[i].y - e.clientY);
+		}
+		else{
+			circles[i].unSelect();
+		}
+	}
+}
+
+canvas.onmouseup = function(e){
+	for(let i = 0; i < circles.length; i++){
+			circles[i].unSelect();
+		}
+}
+
+canvas.onmousemove = function(e){
+	if(circles.length > 1){
+		for(let i = 0; i < circles.length; i++){
+			if(circles[i].s == 1){
+
+					nuevo_centro_x = e.clientX + circles[i].sx;
+					nuevo_centro_y = e.clientY + circles[i].sy;
+
+					circles[i].setX( nuevo_centro_x );
+					circles[i].setY( nuevo_centro_y );
+			}
+		}
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		for(let i = 0; i < circles.length; i++){
+			circles[i].draw(ctx);
+		}
+	}
+}
+
+</script>
+
+</html>

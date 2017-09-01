@@ -1,16 +1,14 @@
 function Disc(p){
   this.p = p;
-  this.espesor = 100;
+  this.espesor = 50;
 }
 
 Disc.prototype.draw = function(ctx,x,y) {
   ctx.beginPath();
-  ctx.fillStyle = this.c;
-  ctx.fillRect(x-(100*this.p/2),y,100*this.p,this.espesor);
+  ctx.fillStyle = this.randomizeColor();
+  ctx.fillRect(x-(50*this.p/2)+50,y,x+(50*this.p)-50,this.espesor);
   ctx.closePath();
 }
-
-
 
 Disc.prototype.drawImage = function(ctx,myImg,repeat) {
   ctx.beginPath();
@@ -23,4 +21,11 @@ Disc.prototype.drawImage = function(ctx,myImg,repeat) {
   ctx.fillDisc(this.x,this.y,200,this.espesor);
   //ctx.fill();
   ctx.closePath();
+  }
+
+Disc.prototype.randomizeColor = function () { //function name
+        var color = '#'; // hexadecimal starting symbol
+        var letters = ['000000','FF0000','00FF00','0000FF','FFFF00','00FFFF','FF00FF','C0C0C0']; //Set your colors here
+        color += letters[Math.floor(Math.random() * letters.length)];
+        return color;
 }

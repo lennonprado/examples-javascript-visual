@@ -1,20 +1,19 @@
 
 var canvas =document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
-
+var juego = null;
 var discoAux = null;
 var torreOld = null;
 var torreNew = null;
-
     function jugar(cantidadDiscos){
-      var juego = new Hanoi(cantidadDiscos);
+      juego = new Hanoi(cantidadDiscos);
       juego.draw(ctx);
     }
 
 
     canvas.onmousedown = function(e){
       torreOld = juego.selected(e.clientX,e.clientY);
-      discoAux = this.torreOld.sacar();
+      discoAux = torreOld.sacar();
     }
 
     canvas.onmouseup = function(e){

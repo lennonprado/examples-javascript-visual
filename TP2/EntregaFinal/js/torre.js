@@ -24,6 +24,12 @@ Tower.prototype.draw = function(ctx) {
   ctx.lineWidth   = 1;
   ctx.strokeRect(this.x - (this.w/2),0,this.x + (this.w/2),600);
 
+  ctx.beginPath();
+  ctx.fillStyle = "#825201";;
+  ctx.fillRect(this.x-10,100,20,600);
+  ctx.closePath();
+
+
   let y = 600;
   for (let i = 0; i<this.discos.length; i++){
     y = y-this.discos[i].espesor;

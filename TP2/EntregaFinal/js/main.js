@@ -10,7 +10,6 @@ var torreNew = null;
       juego.draw(ctx);
     }
 
-
     canvas.onmousedown = function(e){
       torreOld = juego.selected(e.clientX,e.clientY);
       discoAux = torreOld.sacar();

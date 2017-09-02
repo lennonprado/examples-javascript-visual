@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Handlee');
+body{
+    background-image: url("../img/bg.jpg");
+    background-size:100% auto;
+}
+
+h1,h2,h3,h4{
+    color:#fff;
+    font-weight:100;
+    font-family:'Handlee',Arial,Helvetica,sans-serif;
+    line-height:1.4em;
+}
+
+#canvas{
+  box-shadow: 2px 2px 140px #0f0f0f;
+}

@@ -13,10 +13,16 @@ Tower.prototype.poner = function(d) {
 }
 
 Tower.prototype.acepta = function(d) {
-  if(this.discos[this.discos.length-1].p > d.p)
+  if(this.discos.length > 0){
+    if(this.discos[this.discos.length-1].p > d.p)
+      return true;
+    else
+      return false;
+  }
+  else {
     return true;
-  else
-    return false;
+  }
+
 }
 
 Tower.prototype.draw = function(ctx) {
@@ -43,6 +49,13 @@ Tower.prototype.cantidadDiscos = function() {
 
 Tower.prototype.clickeado = function(x,y){
   if ((x > this.x-(this.w/2)) && (x < this.x+(this.w/2)))
+    return true;
+  else
+    return false;
+}
+
+Tower.prototype.hasDisc = function(){
+  if (this.discos.length > 0)
     return true;
   else
     return false;

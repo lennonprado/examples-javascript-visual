@@ -32,8 +32,10 @@ var best = 0;
         discoAux = torreOld.sacar();
         juego.move();
       }
-      else
+      else {
         torreOld = null;
+      }
+      juego.draw(ctx);
     }
 
     canvas.onmousemove = function(e){
@@ -43,7 +45,8 @@ var best = 0;
       }
     }
     canvas.onmouseup = function(e){
-        torreNew = juego.selected(e.clientX,e.clientY);
+      if((discoAux != null) && (torreOld!= null)){
+          torreNew = juego.selected(e.clientX,e.clientY);
         if(torreNew != null){
             if(torreNew.acepta(discoAux)){
                 torreNew.poner(discoAux);
@@ -72,6 +75,7 @@ var best = 0;
               discoAux = null;
             }
         }
+      }
         juego.draw(ctx);
     }
 //    setInterval(newSemilla, 1000);

@@ -13,4 +13,35 @@ h1,h2,h3,h4{
 
 #canvas{
   box-shadow: 2px 2px 140px #0f0f0f;
+  display: none;
 }
+
+.titulo{height: 100}
+
+#cargando{
+  width: 900px;
+  height: 600px;
+  box-shadow: 2px 2px 140px #0f0f0f;
+  display: none;
+
+}
+#cargando img{padding-top: 250px}
+
+#bienvenido{
+  width: 900px;
+  height: 600px;
+  box-shadow: 2px 2px 140px #0f0f0f;
+}
+
+#bienvenido img{padding-top: 250px}
+
+#win{
+  width: 900px;
+  height: 600px;
+  box-shadow: 2px 2px 140px #0f0f0f;
+  display: none;
+}
+
+#win img{padding-top: 250px}
+
+.pie{ margin-top: 10px; color: #FFFFFF}

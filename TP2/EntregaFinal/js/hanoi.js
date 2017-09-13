@@ -4,6 +4,7 @@ function Hanoi(cantidadDiscos){
   this.right = new Tower(750);
   this.moves = 0;
   this.cantidadDiscos = cantidadDiscos;
+
   for(let i=0; i<cantidadDiscos; i++){
       let d = new Disc(cantidadDiscos-i);
       this.left.poner(d);

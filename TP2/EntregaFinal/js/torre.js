@@ -12,6 +12,14 @@ Tower.prototype.poner = function(d) {
     this.discos.push(d);
 }
 
+Tower.prototype.isReady = function(){
+  var printable = false
+  for(let i = 0; i< this.discos.length-1; i++)
+    if(this.discos[i].isPrintable())
+      printable = true;
+  return printable;
+}
+
 Tower.prototype.acepta = function(d) {
   if(this.discos.length > 0){
     if(this.discos[this.discos.length-1].p > d.p)

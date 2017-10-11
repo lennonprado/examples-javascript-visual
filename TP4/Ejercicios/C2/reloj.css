@@ -1,0 +1,103 @@
+.reloj{
+  border: #000000 1px solid;
+  border-radius:100%;
+  width: 600px;
+  height: 600px;
+  margin: 50px auto;
+}
+
+@keyframes ROTAR {
+  from{ transform: translate(0px,-140px) rotate(0deg) translate(0,140px);}
+  to{  transform: translate(0px,-140px) rotate(360deg) translate(0,140px);}
+}
+
+#hora{
+  width: 10px;
+  height: 200px;
+  background-color: #000000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: ROTAR 432s infinite linear;
+
+}
+
+#minuto{
+  width: 5px;
+  height: 280px;
+  background-color: #000000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: transform 1s;
+  animation: ROTAR 36s infinite linear;
+
+
+}
+
+#segundo{
+  width: 1px;
+  height: 290px;
+  background-color: #FF9933;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: ROTAR 60s infinite;
+  animation-timing-function: steps(60);
+
+}
+
+
+
+
+
+/*************
+
+numeros
+
+****************/
+
+
+.horas li{
+  list-style-type: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.horas li:nth-child(1){
+  transform: rotate(0deg) translate(0px,-250px);
+}
+.horas li:nth-child(2){
+  transform: rotate(30deg) translate(0px,-250px);
+}
+.horas li:nth-child(3){
+  transform: rotate(60deg) translate(0px,-250px);
+}
+.horas li:nth-child(4){
+  transform: rotate(90deg) translate(0px,-250px);
+}
+.horas li:nth-child(5){
+  transform: rotate(120deg) translate(0px,-250px);
+}
+.horas li:nth-child(6){
+  transform: rotate(150deg) translate(0px,-250px);
+}
+.horas li:nth-child(7){
+  transform: rotate(180deg) translate(0px,-250px);
+}
+.horas li:nth-child(8){
+  transform: rotate(210deg) translate(0px,-250px);
+}
+.horas li:nth-child(9){
+  transform: rotate(240deg) translate(0px,-250px);
+}
+.horas li:nth-child(10){
+  transform: rotate(270deg) translate(0px,-250px);
+}
+.horas li:nth-child(11){
+  transform: rotate(300deg) translate(0px,-250px);
+}
+.horas li:nth-child(12){
+  transform: rotate(330deg) translate(0px,-250px);
+}

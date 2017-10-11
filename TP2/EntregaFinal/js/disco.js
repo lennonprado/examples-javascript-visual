@@ -7,7 +7,7 @@ function Disc(p){
   this.ancho = p * 35 + 10;
   self = this;
   this.image = new Image();
-  this.image.src = '../EntregaFinal/img/bgdisco.jpg';
+  this.image.src = '../img/bgdisco.jpg';
   this.printable=false;
   this.image.onload = function() {
     self.printable = true;
@@ -19,15 +19,12 @@ Disc.prototype.getAncho = function(){
 }
 
 Disc.prototype.isPrintable = function(){
-  return this.printable;  
+  return this.printable;
 }
 
 Disc.prototype.draw = function(ctx,x,y) {
   ctx.beginPath();
   //ctx.fillStyle = this.color;
-
-
-
 //  ctx.fillRect(x-(this.ancho/2),y,this.ancho,this.espesor);
 
   ctx.drawImage(this.image,x-(this.ancho/2),y,this.ancho,this.espesor);

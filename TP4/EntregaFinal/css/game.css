@@ -1,0 +1,24 @@
+
+
+body{
+  background-image: url("../img/background.jpg");
+  background-repeat: repeat;
+  animation: BACKGROUND-GAME 6s linear infinite;
+}
+
+#runner {
+   width: 280px;
+   height: 346px;
+   margin-left: 50px;
+   background-image: url("../img/WalkingManSpriteSheet.png");
+   background-repeat: no-repeat;
+
+}
+
+.runner-right{
+   animation: RUNNER .8s steps(8, end) infinite;
+}
+.runner-left{
+  transform: scaleX(-1);
+   animation: RUNNER .8s steps(8, end) infinite;
+}

@@ -1,0 +1,28 @@
+#runner {
+   width: 280px;
+   height: 346px;
+   border: 1px solid;
+   margin-left: 100px;
+   background-image: url("../img/WalkingManSpriteSheet.png");
+   background-repeat: no-repeat;
+}
+.runner-jump{
+  transform: translateY(-50px);
+  animation: RUNNER .8s steps(8, end) infinite;
+}
+.runner-down{
+  transform: translateY(50px);
+  animation: RUNNER .8s steps(8, end) infinite;
+}
+
+.runner-stop{
+  /*animation: RUNNER .8s steps(8, end) infinite;*/
+}
+.runner-right{
+  transform: translateX(20px);
+   animation: RUNNER .8s steps(8, end) infinite;
+}
+.runner-left{
+  transform: scaleX(-1) translateX(20px);
+   animation: RUNNER .8s steps(8, end) infinite;
+}

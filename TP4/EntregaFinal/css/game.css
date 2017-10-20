@@ -1,5 +1,3 @@
-
-
 body{
   z-index:10;
   background-image: url("../img/PARALLAX/layer_01.png");
@@ -7,28 +5,52 @@ body{
   background-size:cover; /* Encajamos la imagen al 100% del ancho */
   background-attachment: fixed; /* Establecemos una posicion fija para la imagen */
   background-repeat:repeat-x;
- }
+  overflow: hidden;
+  animation: BACKGROUND-GAME 124s infinite;
+}
+header{
+  width: 100%;
+  height: 20px;
+  position: absolute;
+}
+main{
+    width: 100%;
+    height: 562px;
+    margin: auto;
+    position: absolute;
+    top: 0px;
+    left: auto;
+}
+footer{
+  position: absolute;
+  top: 583px;
+  left: 0px;
+  width: 100%;
+  height: 20px
+}
 
 .nubes{
-position:absolute;
-z-index:11;
-background:transparent url("../img/PARALLAX/layer_02.png") 100% ;
-margin:0;
-padding:0;
-width:100%;
-height:100%;
-animation: ARBOL-GAME 124s steps(8, end) infinite;
+  position:absolute;
+  z-index:11;
+  background:transparent url("../img/PARALLAX/layer_02.png") 100% ;
+  margin:0;
+  padding:0;
+  width:100%;
+  height:703px;
+  animation: BACKGROUND-GAME linear 124s infinite;
+  animation-play-state: paused;
 }
 
 .montanias{
-position:absolute;
-z-index:12;
-background:transparent url("../img/PARALLAX/layer_03.png") 100% ;
-margin:0;
-padding:0;
-width:100%;
-height:100%;
-/*animation: ARBOL-GAME 44s steps(8, end) infinite;*/
+    position:absolute;
+    z-index:12;
+    background:transparent url("../img/PARALLAX/layer_03.png") 100% ;
+    margin:0;
+    padding:0;
+    width:100%;
+    height:703px;
+    animation: BACKGROUND-GAME linear 44s infinite;
+    animation-play-state: paused;
 }
 
 .arboles{
@@ -38,8 +60,9 @@ height:100%;
    margin:0;
    padding:0;
    width:100%;
-   height:100%;
-   /*animation: ARBOL-GAME 19s steps(8, end) infinite;*/
+   height:703px;
+   animation: BACKGROUND-GAME linear 19s  infinite;
+   animation-play-state: paused;
 }
 
 .piso{
@@ -49,8 +72,9 @@ height:100%;
    margin:0;
    padding:0;
    width:100%;
-   height:100%;
-   /*animation: PISO-GAME .8s steps(8, end) infinite;*/
+   height:703px;
+   animation: BACKGROUND-GAME linear 4s  infinite;
+   animation-play-state: paused;
 }
 
 nav a{

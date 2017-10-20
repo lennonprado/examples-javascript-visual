@@ -6,9 +6,11 @@
    from {background-position: 0px;}
    to {background-position: -998px;}
 }
-@keyframes RUNNER-JUMPING {
-   from {background-position: 0px;}
+@keyframes RUNNER-JUMP {
+   from {background-position: 0px; }
    to {background-position: -1034px;}
+   0%,100% {transform: translateY(0);}
+   50% {transform: translateY(-55px);}
 }
 @keyframes RUNNER-DOWN {
    from {background-position: 0px;}
@@ -19,18 +21,12 @@
    to {background-position: -1992px;}
 }
 
-
 @keyframes ENEMY {
-   from {background-position: 60px;}
-   to {background-position: -2370px;}
-}
-
-@keyframes COIN {
-   from {background-position: 60px;}
-   to {background-position: -2370px;}
+   from {background-position: 0px;}
+   to {background-position: -400px;}
 }
 
 @keyframes BACKGROUND-GAME {
-   from {background-position: 0px;}
-   to {background-position: -1269px;}
+   from {background-position: 1250px;}
+   to {background-position: 0px;}
 }

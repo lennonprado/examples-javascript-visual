@@ -1,29 +1,31 @@
 document.onkeydown = function(e) {
   switch(event.code) {
       case "ArrowRight":
-          player.right();
-          console.log(player);
-          break;
-      case "ArrowLeft":
-          player.left();
+          juego.ArrowRight = true;
           break;
       case "ArrowUp":
-          player.jump();
+          juego.ArrowUp = true;
           break;
       case "ArrowDown":
-          player.down();
+          juego.ArrowDown = true;
           break;
       default:
-          player.stop();
           break;
   }
 }
 
 document.onkeyup = function(e) {
   switch(event.code) {
+    case "ArrowRight":
+        juego.ArrowRight = false;
+        break;
+    case "ArrowUp":
+        juego.ArrowUp = false;
+        break;
+    case "ArrowDown":
+        juego.ArrowDown = false;
+        break;
     default:
-      player.stop();
-
         break;
   }
 }

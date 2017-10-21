@@ -1,42 +1,68 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="css/keyframes.css">
-    <link rel="stylesheet" href="css/game.css">
-    <link rel="stylesheet" href="css/player.css">
-    <link rel="stylesheet" href="css/enemy.css">
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li>Time</li>
-          <li>Lives</li>
-          <li>Best</li>
-          <li>Controls</li>
-        </ul>
-      </nav>
-    </header>
-    <main id="pantalla">
-      <div id="runner"></div>
+<html lang="es">
 
-      <div class="enemy" id="0"></div>
-      <div class="enemy" id="1"></div>
-      <div class="enemy" id="2"></div>
-      <div class="enemy" id="3"></div>
-      <div class="enemy" id="4"></div>
 
-    </main>
+<head>
 
-    <footer>
-mi pie de pagina
-    </footer>
-    <script type="text/javascript" src="js/player.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+   <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+   <link rel="stylesheet" href="css/keyframes.css">
+   <link rel="stylesheet" href="css/game.css">
+   <link rel="stylesheet" href="css/player.css">
+   <link rel="stylesheet" href="css/enemy.css">
+
+</head>
+
+<body>
+   <div class="nubes">
+      <div class="montanias">
+         <div class="arboles">
+            <div class="piso">
+
+            <header>
+              <nav>
+                 <ul class="nav justify-content-center">
+                   <li class="nav-item">
+                     <a class="nav-link" href="#"> <span id="vidas">3</span> <img src="image/vida.png" height="40" width="40" /> </a>
+                   </li>
+                   <li class="nav-item">
+                     <a class="nav-link" href="#">Time: <span id="time">03:00</span></a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link" href="#">Point: <span id="point">0</span></a>
+                   </li>
+                   <li class="nav-item">
+                     <a class="nav-link" href="#">Best: <span id="best">0</span></a>
+                   </li>
+                   <li class="nav-item">
+                     <a class="nav-link" href="#" id="controles">Controls</a>
+                   </li>
+                  </ul>
+              <nav>
+            </header>
+
+            <main id="pantalla">
+               <div id="runner"></div>
+
+               <div class="enemy" id="0"></div>
+               <div class="enemy" id="1"></div>
+               <div class="enemy" id="2"></div>
+               <div class="enemy" id="3"></div>
+               <div class="enemy" id="4"></div>
+
+            <main>
+
+            <footer>Interfaces de usuario e Interacción - Marcelo Prado</footer>
+
+         </div>
+      </div>
+   </div>
+</div>
+
+<script type="text/javascript" src="js/player.js"></script>
     <script type="text/javascript" src="js/enemy.js"></script>
     <script type="text/javascript" src="js/game.js"></script>
     <script type="text/javascript" src="js/moves.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-  </body>
+
+</body>
 </html>

@@ -53,26 +53,13 @@ Game.prototype.jugar = function(){
   }, 50);
 }
 
-Game.prototype.verifyColition = function(player,enemy){
-  playerMaxX = player.getX() + player.getR();
-  playerMaxY = player.getY() + player.getR();
-  enemyMaxX = enemy.getX() + enemy.getR();
-  if(playerMaxX < enemy.getX()){
-      return false;
-  }
-  else {
-      if(player.getX() > enemyMaxX){
-        return false;
-      }
-      else {
-        if(playerMaxY < enemy.getY()){
-          return false;
-        }
-        else {
+Game.prototype.verifyColition = function(miPlayer,enemy){
+
+
+console.log(document.getElementById('runner').style.top);
+
+  document.getElementById('px').innerHTML = document.getElementById('runner').style.top;
           return true;
-        }
-      }
-  }
 }
 
 Game.prototype.moverfondo = function() {

@@ -1,44 +1,41 @@
 function Player(){
-    this.radio = 280;
-    this.posicionX = 100;
-    this.posicionY = 500;
+    this.estado = 'stop';
     this.player = document.getElementById('runner');
 }
 
-Player.prototype.getX = function(){
-  return this.posicionX;
+Player.prototype.xRight = function(){
+  return this.player.style.left + this.player.style.width;
 }
 
-Player.prototype.getY = function(){
-  return this.posicionY;
+Player.prototype.xLeft = function(){
+  return 10;
 }
-
-Player.prototype.getR = function(){
-  return this.radio;
+Player.prototype.yBottom = function(){
+  return this.player.style.top + this.player.style.heigh;
+}
+Player.prototype.yTop = function(){
+  return this.player.style.top;
 }
 
 Player.prototype.stop = function(){
+  this.estado = 'stop';
   this.player.className = "runner-stop";
-
-
-
-  /* animation end y animation start */
 }
 
 Player.prototype.jump = function(){
+  this.estado = 'jump';
   this.player.className = "runner-jump";
-
-  this.player.addEventListener('webkitAnimationEnd',function(){
-    this.className = "runner-stop";
-    //console.log('x');
+  this.player.addEventListener('webkitAnimationEnd',() => {
   })
 }
 
 Player.prototype.right = function(){
+  this.estado = 'run';
   this.player.className = "runner-right";
 }
 
 Player.prototype.down = function(){
+  this.estado = 'down';
   this.player.className = "runner-down";
 }
 

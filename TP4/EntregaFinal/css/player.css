@@ -2,13 +2,13 @@
    border: 1px solid;
    position: absolute;
    left: 100px;
-   top: 250px;
-   height: 240px;
-   width: 110px;
+   top: 450px;
+   height: 100px;
+   width: 48px;
 }
 .runner-jump{
   background-image: url("../img/saltar.png");
-  animation: RUNNER-JUMP .8s steps(8, end);
+  animation: RUNNER-JUMP 1.8s steps(8, end);
 }
 .runner-stop{
   background-image: url("../img/esperando.png");
@@ -16,7 +16,7 @@
 }
 .runner-right{
   background-image: url("../img/correr.png");
-   animation: RUNNER-WALK .8s steps(8, end) infinite;
+   animation: RUNNER-WALK .6s steps(6, end) infinite;
 }
 .runner-die{
   background-image: url("../img/morir.png");

@@ -1,16 +1,16 @@
 @keyframes RUNNER-WAIT {
    from {background-position: 0px;}
-   to {background-position: -854px;}
+   to {background-position: -390px;}
 }
 @keyframes RUNNER-WALK {
    from {background-position: 0px;}
-   to {background-position: -998px;}
+   to {background-position: -344px;}
 }
 @keyframes RUNNER-JUMP {
    from {background-position: 0px; }
-   to {background-position: -1034px;}
+   to {background-position: -474px;}
    0%,100% {transform: translateY(0);}
-   50% {transform: translateY(-55px);}
+   50% {transform: translateY(-50px);}
 }
 @keyframes RUNNER-DOWN {
    from {background-position: 0px;}
@@ -18,7 +18,7 @@
 }
 @keyframes RUNNER-DIE {
    from {background-position: 0px;}
-   to {background-position: -1992px;}
+   to {background-position: -837px;}
 }
 
 @keyframes ENEMY {

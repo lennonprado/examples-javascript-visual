@@ -3,11 +3,32 @@
   height: 50px;
   display: inline-block;
   position: absolute;
-  left: 2000px;
-  top: 500px;
+  background-image: url("../img/bomba.png");
+  animation: ENEMY .6s steps(8, end) infinite;
+}
 
- background-image: url("../img/bomba.png");
- animation: ENEMY .8s steps(8, end) infinite;
-
-
+.enemy-kaboom {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: absolute;
+  background-image: url("../img/explosion.png");
+  animation-name: ENEMY-KABOOM;
+  animation-duration: 2s;
+  animation-direction: normal;
+  animation-timing-function:steps(16,end);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.enemy-pasado {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: absolute;
+  background-image: url("../img/bomba.png");
+  animation-name: ENEMY-PASSED;
+  animation-duration: 1.5s;
+  animation-direction: normal;
+  animation-timing-function:steps(16,end);
+  animation-fill-mode: infinite;
 }

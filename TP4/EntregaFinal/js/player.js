@@ -8,11 +8,13 @@ Player.prototype.xRight = function(){
 }
 
 Player.prototype.xLeft = function(){
-  return 10;
+  return this.player.style.left;
 }
+
 Player.prototype.yBottom = function(){
   return this.player.style.top + this.player.style.heigh;
 }
+
 Player.prototype.yTop = function(){
   return this.player.style.top;
 }
@@ -26,6 +28,8 @@ Player.prototype.jump = function(){
   this.estado = 'jump';
   this.player.className = "runner-jump";
   this.player.addEventListener('webkitAnimationEnd',() => {
+      this.estado = 'stop';
+      this.player.className = "runner-stop";
   })
 }
 
@@ -34,11 +38,9 @@ Player.prototype.right = function(){
   this.player.className = "runner-right";
 }
 
-Player.prototype.down = function(){
-  this.estado = 'down';
-  this.player.className = "runner-down";
-}
-
 Player.prototype.die = function(){
+  this.estado = 'die';
   this.player.className = "runner-die";
+  this.player = "";
+
 }

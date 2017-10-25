@@ -13,6 +13,12 @@ header{
   height: 20px;
   position: absolute;
 }
+header nav a{
+   font-size: 22px;
+   color: #FFFFFF;
+   font-family: 'Russo One', sans-serif;
+   line-height: 30px;
+}
 main{
     width: 100%;
     height: 562px;
@@ -22,11 +28,13 @@ main{
     left: auto;
 }
 footer{
-  position: absolute;
-  top: 583px;
-  left: 0px;
+  position: fixed;
+  bottom: 0px;
   width: 100%;
-  height: 20px
+  text-align: center;
+  font-family: 'Russo One', sans-serif;
+  font-size: 14px;
+  color: #000000;
 }
 
 .nubes{
@@ -73,23 +81,6 @@ footer{
    padding:0;
    width:100%;
    height:703px;
-   animation: BACKGROUND-GAME linear 4s  infinite;
+   animation: BACKGROUND-GAME linear 10s  infinite;
    animation-play-state: paused;
-}
-
-nav a{
-   font-size: 22px;
-   color: #FFFFFF;
-   font-family: 'Russo One', sans-serif;
-   line-height: 30px;
-}
-
-#vidas{}
-
-footer{
-   margin-top: 20px;
-   text-align: center;
-   font-family: 'Russo One', sans-serif;
-   font-size: 14px;
-   color: #a3c2c2;
 }

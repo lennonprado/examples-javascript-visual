@@ -1,5 +1,4 @@
 #runner {
-   border: 1px solid;
    position: absolute;
    left: 100px;
    top: 450px;
@@ -8,17 +7,19 @@
 }
 .runner-jump{
   background-image: url("../img/saltar.png");
-  animation: RUNNER-JUMP 1.8s steps(8, end);
+  animation: RUNNER-JUMP 1.2s steps(8, end);
 }
 .runner-stop{
   background-image: url("../img/esperando.png");
   animation: RUNNER-WAIT .8s steps(8, end) infinite;
 }
 .runner-right{
+  width: 57px !important;
   background-image: url("../img/correr.png");
-   animation: RUNNER-WALK .6s steps(6, end) infinite;
+  animation: RUNNER-WALK .4s steps(6, end) infinite;
 }
 .runner-die{
+  width: 93px !important;
   background-image: url("../img/morir.png");
-  animation: RUNNER-DIE .8s steps(9, end) infinite;
+  animation: RUNNER-DIE 1s steps(9, start) forwards;
 }

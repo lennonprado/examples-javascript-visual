@@ -4,23 +4,27 @@ function Game(player){
     this.enemigos = [];
     this.ArrowRight = false;
     this.ArrowUp = false;
-    this.ArrowDown = false;
     this.player = player;
+    this.lives = 3;
+    this.points = 0;
     self = this;
     for(let i=0;i<5;i++){
         enemy = new Enemy(i);
-        enemy.draw();
         this.enemigos.push(enemy);
     }
+}
+Game.prototype.restarVida = function(){
+  this.lives = this.lives - 1;
+  document.getElementById('vidas').innerHTML = this.lives;
+}
+Game.prototype.sumarPunto = function(){
+  this.points = this.points + 1;
+  document.getElementById('puntos').innerHTML = this.points;
 }
 Game.prototype.update = function(){
 
     if(this.ArrowUp == true){
       player.jump();
-      this.moverfondo();
-    }
-    else if(this.ArrowDown == true){
-      player.down();
       this.moverfondo();
     }
     else if(this.ArrowRight == true){
@@ -31,20 +35,15 @@ Game.prototype.update = function(){
       player.stop();
       this.pararfondo();
     }
-
-
-
-
-  for(let i=0;i<this.enemigos.length;i++){
-      this.enemigos[i].move();
-      if(this.verifyColition(this.player,this.enemigos[i])){
-          // logica del juego
-          //console.log('toca');
-      }
-      else {
-        //console.log('no toca');
-      }
-  }
+    for(let i=0;i<this.enemigos.length;i++){
+        this.enemigos[i].move();
+        if(this.verifyColition(this.player,this.enemigos[i])){
+              this.enemigos[i].kaboom();
+              this.restarVida();
+              if (this.lives == 0)
+                this.player.die();
+        }
+    }
 }
 
 Game.prototype.jugar = function(){
@@ -54,12 +53,23 @@ Game.prototype.jugar = function(){
 }
 
 Game.prototype.verifyColition = function(miPlayer,enemy){
+  if(enemy.estado == 'on'){
+    if((enemy.posicionX < 140) && (enemy.posicionX > 100) && (player.estado != 'jump')){
+        return true;
+    }
+    else {
+      // si lo salto
+      if ((enemy.posicionX < 100)&&(enemy.estado == 'on')) {
+        this.sumarPunto();
+        enemy.pasado();
+      }
+      return false
+    }
 
-
-console.log(document.getElementById('runner').style.top);
-
-  document.getElementById('px').innerHTML = document.getElementById('runner').style.top;
-          return true;
+  }
+  else {
+    return false;
+  }
 }
 
 Game.prototype.moverfondo = function() {

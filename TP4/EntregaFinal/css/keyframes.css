@@ -26,7 +26,33 @@
    to {background-position: -400px;}
 }
 
+@keyframes ENEMY-KABOOM {
+   from {background-position: 800px;}
+   to {background-position: 0px;}
+}
+
+@keyframes ENEMY-PASSED {
+   from {background-position: 800px;rotation: 0deg;}
+   to {background-position: 0px;rotation: 360deg;}
+}
+
 @keyframes BACKGROUND-GAME {
    from {background-position: 1250px;}
    to {background-position: 0px;}
+}
+
+@keyframes TEXT-BLINK {
+  0%,100% {opacity: 1.0;}
+  50% {opacity: 0.6;}
+}
+
+@keyframes OUT-INTRO {
+  0%{  }
+  99% { margin-top: -600px;}
+  100%{display: none}
+}
+
+@keyframes LIVE-HEART {
+  from{ transform: scale(1);}
+  to {transform: scale(0.8);}
 }

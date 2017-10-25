@@ -1,0 +1,73 @@
+.intro{
+  width: 768px;
+  height: 512px;
+  background-image: url('../img/menu-background.jpg');
+  z-index: 14;
+  margin: 0 auto;
+  box-shadow: 0px 0px 40px 0px #000000;
+}
+
+.intro-out{
+
+display: none;
+
+/*  width: 768px;
+  height: 512px;
+  background-image: url('../img/menu-background.jpg');
+  z-index: 14;
+  margin: 0 auto;
+  box-shadow: 0px 0px 40px 0px #000000;
+  animation-name: OUT-INTRO;
+  animation-timing-function:linear;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; */
+}
+
+ h1{
+  font-family: 'Russo One', sans-serif;
+  font-size: 60px;
+  color: rgba(255,175,75,1);
+  margin: auto;
+  text-align: center;
+  padding-top: 250px;
+  animation-name: TEXT-BLINK;
+  animation-iteration-count: infinite;
+  animation-timing-function:linear ;
+  animation-duration: 1s;
+  text-shadow: 2px 2px 8px #000000;
+}
+
+.botones{
+  text-align: center;
+  margin-top: 0px;
+}
+.botones button{
+  font-size: 20px;
+  font-family: 'Russo One', sans-serif;
+  background-color: rgba(255,175,75,1);
+  color: #000000;
+  border: none;
+  padding: 5px 20px 5px 20px;
+  margin: 10px;
+  box-shadow: 2px 2px 8px 0px #000000;
+  cursor: pointer;
+  animation-name: TEXT-BLINK;
+  animation-iteration-count: infinite;
+  animation-timing-function:linear ;
+  animation-duration: 1s;
+}
+
+.controles{ margin-top: 20px; display: none}
+.controles p{
+  font-family: 'Russo One', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.controles p img{
+  width: 25px;
+  height: 25px;
+}
+
+.vidas{animation: LIVE-HEART linear 1s infinite;}

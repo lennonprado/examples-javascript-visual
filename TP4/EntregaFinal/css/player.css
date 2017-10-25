@@ -3,12 +3,11 @@
    left: 100px;
    top: 450px;
    height: 100px;
-   width: 48px;
 }
 .runner-jump{
-  width: 60px !important;
+  width: 60px;
   background-image: url("../img/saltar.png");
-  animation: RUNNER-JUMP 1.2s steps(8, end);
+  animation: RUNNER-JUMP 1s steps(8, end);
 }
 .runner-stop{
   width: 48px;
@@ -16,12 +15,12 @@
   animation: RUNNER-WAIT .8s steps(8, end) infinite;
 }
 .runner-right{
-  width: 57px !important;
+  width: 57px;
   background-image: url("../img/correr.png");
-  animation: RUNNER-WALK .4s steps(6, end) infinite;
+  animation: RUNNER-WALK 0.7s steps(6, end) infinite;
 }
 .runner-die{
-  width: 93px !important;
+  width: 93px;
   background-image: url("../img/morir.png");
-  animation: RUNNER-DIE 1s steps(9, start) forwards;
+  animation: RUNNER-DIE 1s steps(8, start) forwards;
 }

@@ -10,7 +10,7 @@
    from {background-position: 0px; }
    to {background-position: -474px;}
    0%,100% {transform: translateY(0);}
-   50% {transform: translateY(-50px);}
+   50% {transform: translateY(-100px);}
 }
 @keyframes RUNNER-DOWN {
    from {background-position: 0px;}
@@ -18,7 +18,7 @@
 }
 @keyframes RUNNER-DIE {
    from {background-position: 0px;}
-   to {background-position: -837px;}
+   to {background-position: -744px;}
 }
 
 @keyframes ENEMY {
@@ -48,8 +48,7 @@
 
 @keyframes OUT-INTRO {
   0%{  }
-  99% { margin-top: -600px;}
-  100%{display: none}
+  100% { margin-top: -600px;}
 }
 
 @keyframes LIVE-HEART {

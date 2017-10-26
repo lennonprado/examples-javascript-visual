@@ -1,7 +1,7 @@
 function Enemy(id){
   this.estado = 'on';
-  this.posicionX = screen.width + (Math.floor((Math.random() * 10) * 100 ) );
-  this.posicionY = 500;
+  this.posicionX = screen.width + (id * 250) + Math.floor((Math.random() * 120));
+  this.posicionY = 510;
   this.radio = 50;
   this.id = id;
   this.enemy = document.getElementById(id);

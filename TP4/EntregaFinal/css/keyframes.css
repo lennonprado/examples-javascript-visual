@@ -32,8 +32,8 @@
 }
 
 @keyframes ENEMY-PASSED {
-   from {background-position: 800px;rotation: 0deg;}
-   to {background-position: 0px;rotation: 360deg;}
+   from {background-position: 800px;transform: rotate(360deg);}
+   to {background-position: 0px;transform: rotate(0deg);}
 }
 
 @keyframes BACKGROUND-GAME {

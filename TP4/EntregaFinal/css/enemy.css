@@ -3,6 +3,7 @@
   height: 50px;
   display: inline-block;
   position: absolute;
+  left: 2000px;
   background-image: url("../img/bomba.png");
   animation: ENEMY .6s steps(8, end) infinite;
 }
@@ -26,9 +27,5 @@
   display: inline-block;
   position: absolute;
   background-image: url("../img/bomba.png");
-  animation-name: ENEMY-PASSED;
-  animation-duration: 1.5s;
-  animation-direction: normal;
-  animation-timing-function:steps(16,end);
-  animation-fill-mode: infinite;
+  animation: ENEMY-PASSED .6s steps(8, end) infinite;
 }

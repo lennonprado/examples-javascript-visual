@@ -6,10 +6,12 @@
    width: 48px;
 }
 .runner-jump{
+  width: 60px !important;
   background-image: url("../img/saltar.png");
   animation: RUNNER-JUMP 1.2s steps(8, end);
 }
 .runner-stop{
+  width: 48px;
   background-image: url("../img/esperando.png");
   animation: RUNNER-WAIT .8s steps(8, end) infinite;
 }

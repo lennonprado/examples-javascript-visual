@@ -1,8 +1,10 @@
-var player = new Player();
-var juego = new Game(player);
+
+
 
 function newjuego(){
   document.getElementsByClassName('intro')[0].className = "intro-out";
+  player = new Player();
+  juego = new Game(player); 
   juego.jugar();
 }
 

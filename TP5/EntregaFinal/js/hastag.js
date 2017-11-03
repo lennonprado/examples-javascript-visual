@@ -1,18 +1,7 @@
-function Hastag(){
-  var CONSUMER_KEY = '';
-  var CONSUMER_SECRET = '';
-  var ACCESS_TOKEN = '';
-  var ACCESS_TOKEN_SECRET = '';
+var imagenes = [];
 
-/*
-OAuth oauth_consumer_key="4J8f4cnXTqWOWRNZnpmLcManX",
-oauth_token="106515381-hrU5tNmzLFlgt5FFOdLnfukPWbwik4jD4XJl0fTh",
-oauth_signature_method="HMAC-SHA1",
-oauth_timestamp="1509388485",
-oauth_nonce="EcFkKe",
-oauth_version="1.0",
-oauth_signature="F%2FGDQw0OR66QJx24E%2B7dsKrucys%3D"
-*/
+function Hastag(){
+
 
 }
 
@@ -33,26 +22,48 @@ Hastag.prototype.searchTags = function(q){
             });
 }
 
+function colocarImagenes(){
+    var contenido = '';
+    for (var i = 0; i < imagenes.length; i++) {
+         contenido = contenido + '<div class="imagen"><img src="'+imagenes[i][0]+'"><div class="tweet">'+imagenes[i][1]+'</div></div>';
+    }
+    document.getElementById("imagenes").innerHTML = contenido;
+}
+
+
 var searchclass = new Hastag();
 
 $('#search').change(function(){
+
+  document.getElementById("loading").style.display = 'block';
+
   let q = $(this).val();
-  //console.log(q);
-  $.ajax({
-          type: 'GET',
-          dataType: 'json',
 
-          url: 'https://api.twitter.com/1.1/search/tweets.json?q='+q,
-              beforeSend: function (xhr) {
-                xhr.setRequestHeader('Authorization', 'OAuth oauth_consumer_key="4J8f4cnXTqWOWRNZnpmLcManX",oauth_token="106515381-hrU5tNmzLFlgt5FFOdLnfukPWbwik4jD4XJl0fTh",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1509389276",oauth_nonce="pyTrIN",oauth_version="1.0",oauth_signature="ZUBxq3%2F1UmGa3EYjWeNyH6whoBw%3D"');
-                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8');
-              },
-              success: function(data){
-                console.log(data);
-              },
-              error: function(){
+  var cb = new Codebird;
+  cb.setConsumerKey('4J8f4cnXTqWOWRNZnpmLcManX', 'fv0bVfePWTdMNzBk3pJnPRlnGt7WZGOwNOOnqHSqgDXQWmNcEr');
 
-              }
-          });
-  //searchclass.searchTags(q);
+  cb.__call(
+    'oauth2_token',
+    {},
+    function (reply) {
+        var bearer_token = reply.access_token;
+      }
+  );
+
+  cb.__call(
+    'search/tweets',
+    'q=#'+q + '&tweet_mode=extended&filter:media',
+    function (reply) {
+      imagenes = [];
+      for(i=0;i<reply.statuses.length;i++){
+        if(typeof reply.statuses[i].extended_entities !== "undefined"){
+          imagenes.push([reply.statuses[i].extended_entities.media[0].media_url, reply.statuses[i].favorite_count]);
+          document.getElementById("loading").style.display = 'none';
+          colocarImagenes();
+        }
+      }
+    },
+    true // this parameter required
+  );
+
 });

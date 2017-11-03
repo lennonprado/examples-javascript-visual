@@ -30,6 +30,17 @@ function colocarImagenes(){
     document.getElementById("imagenes").innerHTML = contenido;
 }
 
+function indexOfArray(val, array) {
+  var
+    hash = {},
+    indexes = {},
+    i, j;
+  for(i = 0; i < array.length; i++) {
+    hash[array[i]] = i;
+  }
+  return (hash.hasOwnProperty(val)) ? hash[val] : -1;
+};
+
 
 var searchclass = new Hastag();
 
@@ -55,13 +66,14 @@ $('#search').change(function(){
     'q=#'+q + '&tweet_mode=extended&filter:media',
     function (reply) {
       imagenes = [];
+      document.getElementById("loading").style.display = 'none';
+      console.log(reply.statuses);
       for(i=0;i<reply.statuses.length;i++){
         if(typeof reply.statuses[i].extended_entities !== "undefined"){
-          imagenes.push([reply.statuses[i].extended_entities.media[0].media_url, reply.statuses[i].favorite_count]);
-          document.getElementById("loading").style.display = 'none';
-          colocarImagenes();
+            imagenes.push([reply.statuses[i].extended_entities.media[0].media_url, reply.statuses[i].favorite_count]);
         }
       }
+      colocarImagenes();
     },
     true // this parameter required
   );
